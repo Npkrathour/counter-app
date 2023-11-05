@@ -31,7 +31,7 @@ const App = () => {
             alt="Count"
           />
         </div>
-        <h2 className="fs-3 fw-bold mb-5">My Counter App</h2>
+        <h2 className="fs-3 fw-bold mb-5">My Latest Counter App</h2>
         <p className="display-4 fw-bold">{count}</p>
         <button
           className="btn btn-success py-2 px-5 me-5 rounded fw-bold"
