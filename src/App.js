@@ -8,9 +8,7 @@ const App = () => {
   };
 
   const handleSub = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
+    setCount(count - 1);
   };
 
   const handleReset = () => {
@@ -34,6 +32,7 @@ const App = () => {
         <h2 className="fs-3 fw-bold mb-5">My Latest Counter App</h2>
         <p className="display-4 fw-bold">{count}</p>
         <button
+          disabled={count === 10 && true}
           className="btn btn-success py-2 px-5 me-5 rounded fw-bold"
           onClick={handleAdd}
         >
