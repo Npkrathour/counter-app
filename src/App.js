@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CountImg from "./assets/myImg.jpg";
+import Button from "./components/Button";
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -22,36 +23,26 @@ const App = () => {
     >
       <div className="p-5 bg-white rounded-3 text-center border-5 border border-success shadow-lg">
         <div className="counter-img">
-          <img
-            width={"100px"}
-            className="rounded-circle"
-            src={CountImg}
-            alt="Count"
-          />
+          <img width={"100px"} className="rounded-circle" src={CountImg} alt="Count" />
         </div>
         <h2 className="fs-3 fw-bold mb-5">My Latest Counter App</h2>
         <p className="display-4 fw-bold">{count}</p>
-        <button
-          disabled={count === 10 && true}
-          className="btn btn-success py-2 px-5 me-5 rounded fw-bold"
-          onClick={handleAdd}
-        >
-          Add +{" "}
-        </button>
-        <button
-          disabled={count === 0 && true}
-          className="btn btn-primary py-2 px-5 me-5 rounded fw-bold"
-          onClick={handleSub}
-        >
-          Sub -{" "}
-        </button>
-        <button
-          disabled={count === 0 ? true : false}
-          className="btn btn-danger py-2 px-5 rounded fw-bold"
-          onClick={handleReset}
-        >
-          Reset
-        </button>
+        <div className="d-flex align-items-center justify-content-between gap-5">
+          <Button
+            disabled={count === 10}
+            label={"Increment"}
+            variant={"btn-success"}
+            handleFunction={handleAdd}
+          />
+
+          <Button
+            disabled={count === 0}
+            label={"Decreament"}
+            variant={"btn-primary"}
+            handleFunction={handleSub}
+          />
+          <Button disabled={count === 0} label={"Reset"} variant={"btn-danger"} handleFunction={handleReset} />
+        </div>
       </div>
     </div>
   );
